@@ -6,9 +6,7 @@ metadata:
   description: LlamaStack blueprint for RAG
 spec:
   type: service
-  lifecycle: experimental
-  owner: group:pet-managers
+  lifecycle: production
+  owner: ${{values.owner | dump}}
   providesApis:
-    - petstore
-    - internal/streetlights
-    - hello-world
+    - ${{values.component_id | dump}}
