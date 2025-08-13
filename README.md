@@ -53,7 +53,7 @@ Set up your Hugging Face authentication:
 2. **Create the secret in Vault**:
    - Select the **KV** secret engine
    - Navigate to: `secret/`
-   - Set path as: `secrets/ai-kickstart`
+   - Inside the finder, set path as: `secrets/ai-kickstart`
    - Click **Create secret** (Shown on image 1)
    - Add secret data:
      - **Key**: `hf_token`
