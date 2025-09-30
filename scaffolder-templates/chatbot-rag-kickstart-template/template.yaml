@@ -40,6 +40,18 @@ spec:
           default: Chatbot with built-in RAG
           ui:options:
             rows: 5
+        user:
+          title: User
+          type: string
+          description: User of the component
+          ui:field: OwnerPicker
+          default: user:user1
+          ui:options:
+            catalogFilter:
+              kind:
+                - Group
+                - User
+              readonly: false
     - title: Application Repository Location
       required:
         - hostType
@@ -245,7 +257,8 @@ spec:
         values:
           name: ${{ parameters.name }}
           description: Deploy RAG Chatbot using LLaMA Stack, OpenShift AI, and PGVector
-          owner: ${{ user.entity.metadata.name }}
+          #owner: ${{ user.entity.metadata.name }}
+          owner: ${{ parameters.user }}
           repoOwner: ${{ parameters.repoOwner }}
           model: ${{ parameters.model }}
           destination: ${{ parameters.repoOwner }}/${{ parameters.name }}
@@ -273,7 +286,8 @@ spec:
           namespace: ${{ parameters.namespace }}
           description: This is GitOps manifest for ${{ parameters.name }}
           repoURL: https://${{ parameters.githubServer if parameters.hostType === 'GitHub' else parameters.gitlabServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}-gitops.git
-          owner: ${{ user.entity.metadata.name }}
+          #owner: ${{ user.entity.metadata.name }}
+          owner: ${{ parameters.user }}
           llm: ${{ parameters.llm }}
           llm_toleration: ${{ parameters.llm_toleration }}
           safety: ${{ parameters.safety }}

@@ -1,4 +1,27 @@
 apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ${{values.user | dump}}
+  description: User profile for Backstage catalog
+spec:
+  profile:
+    displayName: ${{values.user | dump}} # Replace with your actual name
+  memberOf:
+    - ${{values.repoOwner | dump}} # Replace with your team name(s)
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: default-team
+  description: Default team for new users
+spec:
+  type: team
+  profile:
+    displayName: ${{values.repoOwner | dump}}
+  children: []
+---
+
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{values.name | dump}}
