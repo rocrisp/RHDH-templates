@@ -20,7 +20,6 @@ spec:
     displayName: ${{values.repoOwner | dump}}
   children: []
 ---
-
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -34,7 +33,8 @@ metadata:
     janus-idp.io/tekton: ${{values.name}}
     backstage.io/source-location: url:${{values.repoURL}}
     backstage.io/techdocs-ref: dir:.
-    gitlab.com/project-slug: ${{values.destination}}
+    #gitlab.com/project-slug: ${{values.destination}}
+    github.com/project-slug: ${{values.destination}}
   tags:
     - python
     - rag
