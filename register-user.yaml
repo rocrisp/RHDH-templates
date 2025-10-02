@@ -8,9 +8,7 @@ spec:
     email: rocrisp@redhat.com
   memberOf:
     - rocrisp
-    - 
 ---
-
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
