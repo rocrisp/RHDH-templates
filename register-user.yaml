@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: rocrisp
+spec:
+  profile:
+    # You can add more details here
+    email: rocrisp@redhat.com
+  memberOf:
+    - rocrisp
