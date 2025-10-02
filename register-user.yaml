@@ -8,3 +8,18 @@ spec:
     email: rocrisp@redhat.com
   memberOf:
     - rocrisp
+    - 
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  namespace: default
+  name: rocrisp
+spec:
+  type: team
+  profile:
+    # You can add more details here
+    email: rocrisp@redhat.com
+  parent: rhdh
+  children: []
